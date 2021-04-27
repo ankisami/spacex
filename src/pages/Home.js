@@ -18,7 +18,7 @@ const Home = () => {
     });
   }, []);
 
-  
+
   console.log("API result", data);
   if (data.length > 1) console.log("mission", data[0].name)
   if (data.length > 1) console.log("img", data[0].links.patch.small)
@@ -27,12 +27,12 @@ const Home = () => {
     <div>
       <h1>Page Home</h1>
 
-      {
+      {(data.length > 1 && listRocket.length >1) &&
         data.map((item, index) => {
           const image = (item.links.patch.small != null) ? item.links.patch.small : "https://i.imgur.com/BrW201S.png";
           const rocketName = (listRocket.filter(rocket => rocket.id === item.rocket));
+          console.log("RocketName =>", rocketName[0].name)
 
-          console.log("RocketName", rocketName)
           return (
             <Cards
               key={`${item.name}${index}`}

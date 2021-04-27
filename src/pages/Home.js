@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Page Home</h1>
+      <h1>Space X</h1>
 
       {(data.length > 1 && listRocket.length >1) &&
         data.map((item, index) => {
